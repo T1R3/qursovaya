@@ -142,7 +142,7 @@ void dijkstra(int** G, int start_index, int n, int min, int s, int* posew, int* 
                 }
 
             }
-            posew[s] = 0;
+            posew[s] = 0;                       //вершина помечается посещенной
         }
     } while (s < 10000);
     printf("\nКратчайшие расстояния от вершины %d до остальных вершин\n", start_index+1);
@@ -184,6 +184,10 @@ int main() {
             PrintGraph(G, n);
             printf("Введите номер вершины, с которой хотите начать обход: ");
             scanf("%d", &start_index);
+            while (start_index < 1 || start_index > n) {
+                printf("Требуемая вершина отсутствует. Введите данные корректно:");
+                scanf("%d", &start_index);
+            }
             start_index--;
             init(G, n, minrast, posew);
             dijkstra(G, start_index, n, min, s, posew, minrast, temp);
@@ -215,6 +219,10 @@ int main() {
             PrintGraph(G, n);
             printf("Введите номер вершины, с которой хотите начать обход: ");
             scanf("%d", &start_index);
+            while (start_index < 1 || start_index > n) {
+                printf("Требуемая вершина отсутствует. Введите данные корректно:");
+                scanf("%d", &start_index);
+            }
             start_index--;
             init(G, n, minrast, posew);
             dijkstra(G, start_index, n, min, s, posew, minrast, temp);
@@ -247,6 +255,10 @@ int main() {
             PrintGraph(G, n);
             printf("Введите номер вершины, с которой хотите начать обход: ");
             scanf("%d", &start_index);
+            while (start_index < 1 || start_index > n) {
+                printf("Требуемая вершина отсутствует. Введите данные корректно:");
+                scanf("%d", &start_index);
+            }
             start_index--;
             init(G, n, minrast, posew);
             dijkstra(G, start_index, n, min, s, posew, minrast, temp);
@@ -279,6 +291,10 @@ int main() {
             PrintGraph(G, n);
             printf("Введите номер вершины, с которой хотите начать обход: ");
             scanf("%d", &start_index);
+            while (start_index < 1 || start_index > n) {
+                printf("Требуемая вершина отсутствует. Введите данные корректно:");
+                scanf("%d", &start_index);
+            }
             start_index--;
             init(G, n, minrast, posew);
             dijkstra(G, start_index, n, min, s, posew, minrast, temp);
